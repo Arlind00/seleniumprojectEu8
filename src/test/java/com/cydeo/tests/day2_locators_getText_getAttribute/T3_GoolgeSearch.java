@@ -20,7 +20,7 @@ public class T3_GoolgeSearch {
         driver.get("https://www.google.com");
         WebElement googleSearch = driver.findElement(By.name("q"));
         googleSearch.sendKeys("apple" + Keys.ENTER);                 // sends String from IntelliJ to webpage
-                                                                                   // then clicks ENTER
+                                                                                   // than clicks ENTER
 
 
         String expectedInTitle = "apple";
