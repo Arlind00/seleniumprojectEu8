@@ -23,9 +23,20 @@ public class T3_GoolgeSearch {
                                                                                    // then clicks ENTER
 
 
+        String expectedInTitle = "apple";
+        String actualTitle = driver.getTitle();
+
+        if (actualTitle.startsWith(expectedInTitle)){
+            System.out.println("Title Verification passed");
+        }else   {
+            System.out.println("Title Verification failed");
+        }
 
     }
 }
+
+
+
 /*
 TC#3: Google search
         1- Open a chrome browser
