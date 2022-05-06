@@ -21,7 +21,7 @@ public class T1_CydeoVerifications {
         if (actualURL.contains(expectedURL)){
             System.out.println("URL Verification passed");
         }else   {
-            System.out.println("URL Verification passed");
+            System.out.println("URL Verification failed");
         }
 
 
@@ -31,7 +31,7 @@ public class T1_CydeoVerifications {
         if (actualTitile.contains(expectedTitle)){
             System.out.println("Title Verification passed");
         }else   {
-            System.out.println("Title Verification passed");
+            System.out.println("Title Verification failed");
         }
 
 
