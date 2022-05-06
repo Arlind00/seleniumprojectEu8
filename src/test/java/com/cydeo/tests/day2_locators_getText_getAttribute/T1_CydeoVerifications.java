@@ -19,9 +19,9 @@ public class T1_CydeoVerifications {
         String actualURL = driver.getCurrentUrl();
 
         if (actualURL.contains(expectedURL)){
-            System.out.println("Verification passed");
+            System.out.println("URL Verification passed");
         }else   {
-            System.out.println("Verification passed");
+            System.out.println("URL Verification passed");
         }
 
 
@@ -29,9 +29,9 @@ public class T1_CydeoVerifications {
         String actualTitile = driver.getTitle();
 
         if (actualTitile.contains(expectedTitle)){
-            System.out.println("Verification passed");
+            System.out.println("Title Verification passed");
         }else   {
-            System.out.println("Verification passed");
+            System.out.println("Title Verification passed");
         }
 
 
