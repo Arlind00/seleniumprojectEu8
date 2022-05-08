@@ -15,12 +15,16 @@ public class T4_LibraryLoginPage {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
-        driver.get(" http://library2.cybertekschool.com/login.htm" );
-        WebElement usernameInput = driver.findElement(By.className("form-control"));
+        driver.get("https://library2.cybertekschool.com/login.html" );
 
+        WebElement usernameInput = driver.findElement(By.className("form-control"));
         usernameInput.sendKeys("incorrect@email.com");
 
+        WebElement passwordInput =driver.findElement(By.id("inputPassword"));
+        passwordInput.sendKeys("incorrect password");
 
+        WebElement signInButton = driver.findElement(By.tagName("button"));
+        signInButton.click();
     }
 }
 
