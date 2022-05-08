@@ -35,7 +35,7 @@ public class T5_GetText_GetAttribute {
 
 /*
 TC #5: getText() and getAttribute() method practice
-1- Open a chrome browser
+1- Open a Chrome browser
 2- Go to: https://practice.cydeo.com/registration_form
 3- Verify header text is as expected:
 Expected: Registration form
