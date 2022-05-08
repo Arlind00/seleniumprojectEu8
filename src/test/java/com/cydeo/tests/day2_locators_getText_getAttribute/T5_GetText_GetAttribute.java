@@ -32,11 +32,13 @@ public class T5_GetText_GetAttribute {
         String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
 
         if (actualPlaceHolder.startsWith(expectedPlaceHolder)){
-            System.out.println("Title Verification passed");
+            System.out.println("Place Holder Verification passed");
         }else   {
-            System.out.println("Title Verification failed");
+            System.out.println("Place Holder Verification failed");
         }
 
+
+        driver.close();
 
     }
 }
