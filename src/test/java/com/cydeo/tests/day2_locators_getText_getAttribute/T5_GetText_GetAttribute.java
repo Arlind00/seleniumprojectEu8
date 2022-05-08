@@ -17,11 +17,21 @@ public class T5_GetText_GetAttribute {
         driver.get("https://practice.cydeo.com/registration_form");
 
         WebElement headerText =driver.findElement(By.tagName("h2"));
-
         String actualHeaderText = headerText.getText();
         String expectedHeaderText = "Registration form";
 
         if (actualHeaderText.startsWith(expectedHeaderText)){
+            System.out.println("Title Verification passed");
+        }else   {
+            System.out.println("Title Verification failed");
+        }
+
+
+        WebElement firstNameInput = driver.findElement(By.name("firstname"));
+        String expectedPlaceHolder = "first name";
+        String actualPlaceHolder = firstNameInput.getAttribute("placeholder");
+
+        if (actualPlaceHolder.startsWith(expectedPlaceHolder)){
             System.out.println("Title Verification passed");
         }else   {
             System.out.println("Title Verification failed");
@@ -41,5 +51,5 @@ TC #5: getText() and getAttribute() method practice
 Expected: Registration form
 4- Locate “First name” input box
 5- Verify placeholder attribute’s value is as expected:
-Expected: first nam
+Expected: first name
  */
