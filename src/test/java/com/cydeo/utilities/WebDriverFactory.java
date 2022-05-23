@@ -18,6 +18,7 @@ public class WebDriverFactory {
         }else if(browserType.equalsIgnoreCase("edge driver")) {
             WebDriverManager.edgedriver().setup();
             return new EdgeDriver();                                       // if edge selected open edge tab
+
         }else {
             System.out.println("Given browser type does not exist");
             System.out.println("Driver Null");
