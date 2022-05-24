@@ -13,7 +13,6 @@ public class T3_getAttribute_cssSelector {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-
         driver.get("https://login1.nextbasecrm.com/");
 
 
