@@ -17,7 +17,31 @@ public class T2_getText_getAttribute {
         WebElement rememberMeLabel = driver.findElement(By.className("login-item-checkbox-label"));
 
         String expectedRememberMeLabel = "Remember me on this computer";
-        String actualRememberMeLabel = expectedRememberMeLabel;
+        String actualRememberMeLabel = rememberMeLabel.getText();
+        if (actualRememberMeLabel.equals(expectedRememberMeLabel)){
+            System.out.println("Label verification passed");
+        }else {
+            System.out.println("Label verification failed");
+        }
+
+
+        WebElement forgotPasswordLink =  driver.findElement(By.className("login-link-forgot-pass"));
+        String expectedForgotPasswordLinkText = "FORGOT YOUR PASSWORD?";
+        String actualForgotPasswordLinkText =  forgotPasswordLink.getText();
+        if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)){
+            System.out.println("Forgot password verification verification passed");
+        }else {
+            System.out.println("Forgot password verification verification failed");
+        }
+
+
+        String expectedInHref = "forgot_password=yes";
+        String actualInHrefAttributeValue = forgotPasswordLink.getAttribute("href");
+        if(actualInHrefAttributeValue.contains(expectedInHref)){
+            System.out.println("HREF attribute value verification PASSED!");
+        }else {
+            System.out.println("HREF attribute value verification Failed!");
+        }
 
 
 
@@ -29,7 +53,7 @@ public class T2_getText_getAttribute {
 
 /*
 TC #2: NextBaseCRM, locators, getText(), getAttribute() practice
-        1- Open a chrome browser
+        1- Open a Chrome browser
         2- Go to: https://login1.nextbasecrm.com/
         3- Verify “remember me” label text is as expected:
         Expected: Remember me on this computer
