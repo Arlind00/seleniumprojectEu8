@@ -13,21 +13,17 @@ public class T3_getAttribute_cssSelector {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-        x
+
         driver.get("https://login1.nextbasecrm.com/");
 
-        //3- Verify “Log in” button text is as expected:
-        //Expected: Log In
+
+        //old method
         //WebElement signInButton = driver.findElement(By.className("login-btn"));
 
-        //LOCATING THE SAME WEB ELEMENT USING DIFFERENT ATTRIBUTE VALUES.
-        //	                   tagName[attribute='value']
-        //	                   input[class='login-btn']
-        // LOCATED USING CLASS ATTRIBUTE
+        //new method (same element through using different attributes)
         //WebElement signInButton = driver.findElement(By.cssSelector("input[class='login-btn']"));
-        // LOCATED USING TYPE ATTRIBUTE
         //WebElement signInButton = driver.findElement(By.cssSelector("input[type='submit']"));
-        // LOCATED USING VALUE ATTRIBUTE
+
         WebElement signInButton = driver.findElement(By.cssSelector("input[value='Log In']"));
 
         String expectedButtonText = "Log In";
@@ -42,10 +38,8 @@ public class T3_getAttribute_cssSelector {
         } else {
             System.out.println("Log In button text verification failed!");
 
-
         }
     }
-
 }
 
 
