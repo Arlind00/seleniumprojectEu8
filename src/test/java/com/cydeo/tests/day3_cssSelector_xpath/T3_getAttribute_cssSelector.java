@@ -20,15 +20,13 @@ public class T3_getAttribute_cssSelector {
         //old method
         //WebElement signInButton = driver.findElement(By.className("login-btn"));
 
-        //new method (same element through using different attributes)
+        //new method CSS (same element through using different attributes)
         //WebElement signInButton = driver.findElement(By.cssSelector("input[class='login-btn']"));
         //WebElement signInButton = driver.findElement(By.cssSelector("input[type='submit']"));
 
         WebElement signInButton = driver.findElement(By.cssSelector("input[value='Log In']"));
 
         String expectedButtonText = "Log In";
-
-        //Getting the value of the attribute "value"
         String actualButtonText = signInButton.getAttribute("value");
 
         System.out.println("actualButtonText = " + actualButtonText);
@@ -39,6 +37,8 @@ public class T3_getAttribute_cssSelector {
             System.out.println("Log In button text verification failed!");
 
         }
+
+
     }
 }
 
