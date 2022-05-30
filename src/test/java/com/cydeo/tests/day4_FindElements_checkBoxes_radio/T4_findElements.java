@@ -23,11 +23,10 @@ public class T4_findElements {
         System.out.println("allLinks.size() = " + allLinks.size());
 
 
-        for (WebElement each : allLinks) {
+        for (WebElement each : allLinks) {          // iter + tab (last created element is iterated)
 
             System.out.println("Text of link: " + each.getText());
             System.out.println("HREF Values: " + each.getAttribute("href"));
-
         }
     }
 }
