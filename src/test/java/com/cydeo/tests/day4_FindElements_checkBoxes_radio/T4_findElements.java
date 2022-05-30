@@ -18,22 +18,26 @@ public class T4_findElements {
 
         driver.get("https://practice.cydeo.com/abtest");
 
-        //3- Locate all the links in the page.
-        //windows : alt+enter --> press enter again
-        //mac     : option + Enter --> press enter again
-        List<WebElement> allLinks =  driver.findElements(By.tagName("a"));
 
-        //4- Print out the number of the links on the page.
+        List<WebElement> allLinks = driver.findElements(By.tagName("a"));     //windows : alt+enter --> press enter again
         System.out.println("allLinks.size() = " + allLinks.size());
 
-        //5- Print out the texts of the links.
-        //6- Print out the HREF attribute values of the links
+
         for (WebElement each : allLinks) {
 
             System.out.println("Text of link: " + each.getText());
             System.out.println("HREF Values: " + each.getAttribute("href"));
 
         }
-
     }
 }
+
+/*
+TC #4: FindElements Task
+1- Open a chrome browser
+2- Go to: https://practice.cydeo.com/abtest
+3- Locate all the links in the page.
+4- Print out the number of the links on the page.
+5- Print out the texts of the links.
+6- Print out the HREF attribute values of the link
+ */
