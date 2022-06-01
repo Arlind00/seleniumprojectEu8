@@ -12,15 +12,11 @@ public class Task1_YahooTitle {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-
         driver.manage().window().maximize();
 
         driver.get("https://www.yahoo.com");
 
-
         String expectedTitle = " Yahoo | Mail, Weather, Search, Politics, News, Finance, Sports &amp; Videos ";
-
-
         String actualTitle = driver.getTitle();
 
         if (actualTitle.equals(expectedTitle)){
@@ -28,7 +24,6 @@ public class Task1_YahooTitle {
         }else {
             System.out.println("Verification failed");
         }
-
 
 
     }
