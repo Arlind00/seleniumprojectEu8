@@ -17,7 +17,7 @@ public class T2_LinkTextPractice {
 
         driver.get("https://practice.cydeo.com");
         //  driver.findElement(By.linkText("A/B Testing")).click();
-        WebElement abTestLink = driver.findElement(By.linkText("A/B Testing"));     // element we found we assign to a variable WebElement
+        WebElement abTestLink = driver.findElement(By.linkText("A/B Testing"));     // element found we assign to variable WebElement
         abTestLink.click();                                                         // WebElement variable that contains element from webpage
                                                                                     // clicks on that specific element
 

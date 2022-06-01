@@ -14,7 +14,7 @@ public class T4_findElements {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    // wait until next command execution
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);    // waits up to 10s
 
         driver.get("https://practice.cydeo.com/abtest");
 
@@ -28,6 +28,7 @@ public class T4_findElements {
             System.out.println("Text of link: " + each.getText());
             System.out.println("HREF Values: " + each.getAttribute("href"));
         }
+
     }
 }
 

@@ -38,7 +38,6 @@ public class T5_GetText_GetAttribute {
             System.out.println("Place Holder Verification failed");
         }
 
-
         driver.close();
 
     }

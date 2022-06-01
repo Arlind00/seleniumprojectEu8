@@ -13,11 +13,11 @@ public class WebDriverFactory {
 
         if (browserType.equalsIgnoreCase("chrome")){
             WebDriverManager.chromedriver().setup();
-            return new ChromeDriver();                                     // if chrome selected open Chrome tab
+            return new ChromeDriver();                                      // if chrome selected open Chrome tab
 
         }else if(browserType.equalsIgnoreCase("edge driver")) {
             WebDriverManager.edgedriver().setup();
-            return new EdgeDriver();                                       // if edge selected open edge tab
+            return new EdgeDriver();                                        // if edge selected open edge tab
 
         }else {
             System.out.println("Given browser type does not exist");
@@ -25,13 +25,7 @@ public class WebDriverFactory {
             return null;
         }
     }
-
-
-
 }
-
-
-
 
 /*
  TASK: NEW METHOD CREATION
