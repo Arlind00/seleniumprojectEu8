@@ -6,16 +6,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class SeleniumTest {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException{
 
-        // 1. Setting up the web driver manager
-        WebDriverManager.chromedriver().setup();
 
-        // 2. Create instance of the chrome driver
-        WebDriver driver = new ChromeDriver();
+        WebDriverManager.chromedriver().setup();    // 1. Setting up the web driver manager
 
-        // 3. Test if driver is working as expected
-        driver.get("https://www.google.com");
+        WebDriver driver = new ChromeDriver();      // 2. Create instance of the chrome driver
+        driver.manage().window().maximize();
+
+        driver.get("https://www.google.com");       // 3. Test if driver is working as expected
+
+        Thread.sleep(2000);
+        driver.close();
 
     }
 }
