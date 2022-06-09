@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class T1_xpath_cssSelector_practice {
 
     public static void main(String[] args) {
@@ -12,22 +14,14 @@ public class T1_xpath_cssSelector_practice {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get("https://practice.cydeo.com/forgot_password");
 
-        WebElement homeLink_ex1= driver.findElement(By.cssSelector("a[class='nav-link']"));   // syntax 1
-        WebElement homeLink_ex2= driver.findElement(By.cssSelector("a.nav-link"));            // syntax 2
-        WebElement homeLink_ex3= driver.findElement(By.cssSelector("a[href='/']"));           // syntax 3
-
-
-        WebElement header_ex1 = driver.findElement(By.cssSelector("div.example > h2"));             // syntax 1
-        WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));     // syntax 2
-
-
+        WebElement homeLink_ex1= driver.findElement(By.cssSelector("a[class='nav-link']"));
+        WebElement header_ex2 = driver.findElement(By.xpath("//h2[text()='Forgot Password']"));
         WebElement emailLabel = driver.findElement(By.xpath("//label[@for='email']"));
-
-
         WebElement inputBox_ex1 = driver.findElement(By.xpath("//input[@name='email']"));
-        WebElement inputBox_ex2 = driver.findElement(By.xpath("//input[contains(@pattern,'a-z')]"));
 
 
         WebElement retrievePasswordBtn = driver.findElement(By.xpath("//button[@id='form_submit']"));
@@ -37,12 +31,13 @@ public class T1_xpath_cssSelector_practice {
 
 
         System.out.println("homeLink_ex1.isDisplayed() = " + homeLink_ex1.isDisplayed());
-        System.out.println("header_ex1.isDisplayed() = " + header_ex1.isDisplayed());
         System.out.println("emailLabel.isDisplayed() = " + emailLabel.isDisplayed());
         System.out.println("inputBox_ex1.isDisplayed() = " + inputBox_ex1.isDisplayed());
         System.out.println("retrievePasswordBtn.isDisplayed() = " + retrievePasswordBtn.isDisplayed());
         System.out.println("poweredByCydeoText.isDisplayed() = " + poweredByCydeoText.isDisplayed());
 
+
+        driver.quit();
     }
 }
 

@@ -15,6 +15,7 @@ public class T6_staleException {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
+
         driver.get("https://practice.cydeo.com/abtest");
 
         WebElement cydeoLink = driver.findElement(By.cssSelector("a[href='https://cydeo.com/']"));
@@ -22,8 +23,10 @@ public class T6_staleException {
 
 
         driver.navigate().refresh();
-        cydeoLink = driver.findElement(By.cssSelector("a[href='https://cydeo.com/']"));    // reassign after refreshing  page
+        cydeoLink = driver.findElement(By.cssSelector("a[href='https://cydeo.com/']"));    // reassign after refreshing page
         System.out.println("cydeoLink.isDisplayed() = " + cydeoLink.isDisplayed());
+
+        driver.quit();
 
     }
 }

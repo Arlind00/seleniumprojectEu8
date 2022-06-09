@@ -12,7 +12,7 @@ public class T3_RadioButton_cont {
 
     public static void main(String[] args) {
 
-        //TC #2: Radiobutton handling
+
         //1. Open Chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -22,29 +22,26 @@ public class T3_RadioButton_cont {
 
         //2. Go to https://practice.cydeo.com/radio_buttons
         driver.get("https://practice.cydeo.com/radio_buttons");
-        //Locate name='sports' radio buttons and store them in a List of Web Element
-        clickAndVerifyRadioButton(driver, "sport", "hockey" );          //giving attribute to be checked
-        clickAndVerifyRadioButton(driver, "sport", "football");
-        clickAndVerifyRadioButton(driver, "color", "yellow");
 
+        //Locate name='sports' radio buttons and store them in a List of Web Element
+        clickAndVerifyRadioButton(driver, "sport", "water_PoLo" );          // giving attributes to method
     }
 
 
-    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String idValue){
+    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String expectedId){
         List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));        // dynamic attribute (name Attribute)
 
-        //Loop through the List of WebElement and select matching result "hockey"
-        for (WebElement each : radioButtons) {
-            String eachId = each.getAttribute("id");
 
-            if (eachId.equals(idValue)){
+        for (WebElement each : radioButtons) {              // Loop through the List of WebElement
+            String actualId = each.getAttribute("id");     // Gets id of each element
+            System.out.println(actualId);
 
+            if (actualId.equalsIgnoreCase(expectedId)){
                 each.click();
-                System.out.println( eachId + " is selected : " + each.isSelected());
+                System.out.println( actualId + " is selected : " + each.isSelected());
                 break;
             }
         }
-
             driver.close();
     }
 }

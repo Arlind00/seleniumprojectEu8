@@ -5,18 +5,23 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.concurrent.TimeUnit;
+
 public class ShortVid_CheckBox {
 
     public static void main(String[] args) {
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get("https://practice.cydeo.com/checkboxes");
 
-        WebElement checkbox1 =driver.findElement(By.id("box1"));
+        WebElement checkbox1 = driver.findElement(By.id("box1"));
         System.out.println("checkbox1.isSelected() = " + checkbox1.isSelected());
         checkbox1.click();
         System.out.println("after click = " + checkbox1.isSelected());
+        System.out.println();
 
         WebElement checkbox2 = driver.findElement(By.id("box2"));
         System.out.println("checkbox2.getAttribute(\"checked\") = " + checkbox2.getAttribute("checked"));

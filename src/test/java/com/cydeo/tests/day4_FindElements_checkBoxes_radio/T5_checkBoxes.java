@@ -17,6 +17,7 @@ public class T5_checkBoxes {
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
         driver.get("https://practice.cydeo.com/checkboxes");
 
 
@@ -38,6 +39,10 @@ public class T5_checkBoxes {
 
         System.out.println("checkbox1.isSelected(), expecting true = " + checkbox1.isSelected());
         System.out.println("checkbox2.isSelected(), expecting false = " + checkbox2.isSelected());
+
+
+        driver.quit();
+
 
 //        if(checkbox1.isSelected()){
 //            System.out.println("verification passed");

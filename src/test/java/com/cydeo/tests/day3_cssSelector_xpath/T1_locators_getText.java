@@ -35,7 +35,6 @@ public class T1_locators_getText {
 
 
 
-
         if (actualErrorMessage.equals(expectedErrorMessage)){
             System.out.println("Error message verification PASSED");
         }else   {

@@ -18,6 +18,8 @@ public class BasicNavigations {
         driver.get("https://www.tesla.com");           // Go to Tesla web page
         String name = driver.getTitle();               // Go to Tesla take the Title
         System.out.println("page name = " + name);
+
+
         name = driver.getCurrentUrl();                 // Go to Tesla take the URL
         System.out.println("name = " + name);
 

@@ -12,8 +12,8 @@ public class T2_getText_getAttribute {
 
         WebDriver driver = WebDriverFactory.getDriver("chRoMe");
         driver.manage().window().maximize();
-
         driver.get("https://login1.nextbasecrm.com/");
+
         WebElement rememberMeLabel = driver.findElement(By.className("login-item-checkbox-label"));
 
         String expectedRememberMeLabel = "Remember me on this computer";
@@ -28,6 +28,7 @@ public class T2_getText_getAttribute {
         WebElement forgotPasswordLink =  driver.findElement(By.className("login-link-forgot-pass"));
         String expectedForgotPasswordLinkText = "FORGOT YOUR PASSWORD?";
         String actualForgotPasswordLinkText =  forgotPasswordLink.getText();
+
         if (actualForgotPasswordLinkText.equals(expectedForgotPasswordLinkText)){
             System.out.println("Forgot password verification verification passed");
         }else {
@@ -37,6 +38,7 @@ public class T2_getText_getAttribute {
 
         String expectedInHref = "forgot_password=yes";
         String actualInHrefAttributeValue = forgotPasswordLink.getAttribute("href");
+
         if(actualInHrefAttributeValue.contains(expectedInHref)){
             System.out.println("HREF attribute value verification PASSED!");
         }else {
