@@ -9,11 +9,11 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class TestNG_Selenium {
 
 
     WebDriver driver;               // we make it default
-
 
     @BeforeMethod
     public void setupMethod() {

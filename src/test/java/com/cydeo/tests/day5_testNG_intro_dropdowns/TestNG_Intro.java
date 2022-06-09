@@ -7,7 +7,7 @@ public class TestNG_Intro {
 
 
 
-    @BeforeClass                            // runs ONLY once before everything
+    @BeforeClass                            // runs ONLY once before everything, no need for main method anymore
     public void setupMethod(){
         System.out.println("-----> BeforeClass is running!");
         System.out.println();
@@ -29,7 +29,6 @@ public class TestNG_Intro {
         String actual = "apple";
         String expected = "apple";
         Assert.assertEquals(actual, expected);                  // compares 2 strings from Assert class
-
     }
 
 
@@ -42,7 +41,6 @@ public class TestNG_Intro {
         String expected = "apple";
 
         Assert.assertTrue(actual.equals(expected), "your message will go here");            // compares 2 strings from Assert class
-
     }
 
 
@@ -58,7 +56,5 @@ public class TestNG_Intro {
     @AfterClass                             // runs after the last method is executed
     public void tearDownClass(){
         System.out.println("-----> AfterClass is running!");
-
     }
-
 }
