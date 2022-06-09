@@ -75,10 +75,6 @@ public class ShortVid_xpath {
 
         Thread.sleep(500);
 
-
-
-
-        Thread.sleep(3000);
         driver.quit();
 
 
