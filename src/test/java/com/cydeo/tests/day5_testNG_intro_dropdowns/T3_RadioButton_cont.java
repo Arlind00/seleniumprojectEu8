@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 
 public class T3_RadioButton_cont {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
 
         //1. Open Chrome browser
@@ -19,20 +19,18 @@ public class T3_RadioButton_cont {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 
-
-        //2. Go to https://practice.cydeo.com/radio_buttons
         driver.get("https://practice.cydeo.com/radio_buttons");
 
-        //Locate name='sports' radio buttons and store them in a List of Web Element
+
         clickAndVerifyRadioButton(driver, "sport", "water_PoLo" );          // giving attributes to method
     }
 
 
-    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String expectedId){
+    private static void clickAndVerifyRadioButton(WebDriver driver, String nameAttribute, String expectedId) throws InterruptedException {
         List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));        // dynamic attribute (name Attribute)
 
 
-        for (WebElement each : radioButtons) {              // Loop through the List of WebElement
+        for (WebElement each : radioButtons) {                // Loop through the List of WebElement
             String actualId = each.getAttribute("id");     // Gets id of each element
             System.out.println(actualId);
 
@@ -42,6 +40,8 @@ public class T3_RadioButton_cont {
                 break;
             }
         }
+
+        Thread.sleep(3000);
             driver.close();
     }
 }
