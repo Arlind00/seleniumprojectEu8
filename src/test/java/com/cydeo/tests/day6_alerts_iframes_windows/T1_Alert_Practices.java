@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -18,7 +19,7 @@ public class T1_Alert_Practices {
     WebDriver driver;
 
     @BeforeMethod
-    public void setupMethod(){
+    public void setupMethod() {
         //1. Open browser
         driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -27,7 +28,9 @@ public class T1_Alert_Practices {
         driver.get("https://practice.cydeo.com/javascript_alerts");
     }
 
-    @Test
+
+    @Ignore
+    @Test(priority = 1)
     public void alert_test1() throws InterruptedException {
 
         WebElement informationAlertButton = driver.findElement(By.xpath("//button[.='Click for JS Alert']"));
@@ -50,10 +53,43 @@ public class T1_Alert_Practices {
         Assert.assertEquals(actualText, expectedText, "Actual result text is not as expected!!!");
     }
 
-        @AfterMethod
-        public void endMethod(){
+
+    @Ignore
+    @Test(priority = 2)
+    public void alert_test2() throws InterruptedException {
+
+        WebElement jsConfirmButton = driver.findElement(By.xpath("//button[text()='Click for JS Confirm']"));       // find button JS
+        jsConfirmButton.click();                                                                                    // click button JS
+        Thread.sleep(1500);
+
+        Alert alert = driver.switchTo().alert();                                                                    // convert driver
+        alert.accept();                                                                                             // accept alert
+
+        WebElement clickedOk = driver.findElement(By.xpath("//p[@id=\"result\"]"));                                  // find Ok message
+        Assert.assertTrue(clickedOk.isDisplayed());
+    }
+
+
+    @Test(priority = 3)
+    public void alert_test3() throws InterruptedException {
+
+        WebElement jsPromptButton = driver.findElement(By.xpath("//button[text()='Click for JS Prompt']"));
+        jsPromptButton.click();
+
+        Alert alert = driver.switchTo().alert();
+        alert.sendKeys("hello");
+        alert.accept();
+
+
+        WebElement verifySendKeys = driver.findElement(By.xpath("//p[@id=\"result\"]"));
+        Assert.assertTrue(verifySendKeys.isDisplayed());
+    }
+
+
+    @AfterMethod
+    public void endMethod() {
         driver.quit();
-        }
+    }
 
 }
 
