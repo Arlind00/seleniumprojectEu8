@@ -12,7 +12,7 @@ public class BrowserUtils {
 
 
     // Accepts int (as seconds) and execute Thread.sleep
-    public void sleep(int second){              // accepts int (seconds) and execute Thread.sleep for given duration
+    public static void sleep(int second){              // accepts int (seconds) and execute Thread.sleep for given duration
         second *= 1000;
 
         try {

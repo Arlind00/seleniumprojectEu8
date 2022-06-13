@@ -53,13 +53,18 @@ public class T3_CRM_LOGIN {
         CRM_Utilities.crm_login(driver);                               // our custom made method
 
         BrowserUtils.verifyTitle(driver, "Portal");         // our custom made method
-
-
-
     }
 
 
+    @Test (priority = 3)
+    public void crm_login_test3() throws InterruptedException {
 
+        driver.get("https://login1.nextbasecrm.com/");
+
+        CRM_Utilities.crm_login(driver, "Helpdesk2@cybertekschool.com", "UserUser" );                               // our custom made method
+
+        BrowserUtils.verifyTitle(driver, "Portal");         // our custom made method
+    }
 
 
     @AfterMethod
