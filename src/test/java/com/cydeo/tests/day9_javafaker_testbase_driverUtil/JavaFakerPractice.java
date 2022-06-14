@@ -10,7 +10,7 @@ public class JavaFakerPractice {
     public void test1() {
 
         Faker faker = new Faker();              //Creating Faker object to reach methods
-        //Faker faker = new Faker(new Locale("fr"));
+        //Faker faker = new Faker(new Locale("fr"));        // french fake generator
 
         System.out.println("faker.name().firstName() = " + faker.name().firstName());
         System.out.println("faker.name().lastName() = " + faker.name().lastName());
