@@ -46,8 +46,6 @@ public class T2_getText_getAttribute {
         }
 
 
-
-
     }
 }
 

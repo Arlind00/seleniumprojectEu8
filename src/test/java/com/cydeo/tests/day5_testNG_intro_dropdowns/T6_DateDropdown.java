@@ -32,6 +32,8 @@ public class T6_DateDropdown {
     Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
     Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
 
+        //*[@id="registrationForm"]/div[10]/div/select/option[5]
+
 
         yearDropdown.selectByVisibleText("1923");
         monthDropdown.selectByValue("11");

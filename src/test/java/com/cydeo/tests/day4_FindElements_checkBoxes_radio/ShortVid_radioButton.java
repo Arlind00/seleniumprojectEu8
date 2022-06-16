@@ -29,7 +29,6 @@ public class ShortVid_radioButton {
         System.out.println("after isSelected() = " + blueRadio.isSelected());
 
 
-
         driver.quit();
 
 

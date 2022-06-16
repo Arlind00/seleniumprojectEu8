@@ -42,8 +42,6 @@ public class T1_locators_getText {
         }
 
 
-
-
     }
 }
 

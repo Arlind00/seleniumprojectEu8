@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
 
@@ -18,6 +19,11 @@ public class WebDriverFactory {
         }else if(browserType.equalsIgnoreCase("edge driver")) {
             WebDriverManager.edgedriver().setup();
             return new EdgeDriver();                                        // if edge selected open edge tab
+
+        }else if(browserType.equalsIgnoreCase("firefox")) {
+            WebDriverManager.edgedriver().setup();
+            return new FirefoxDriver();
+
 
         }else {
             System.out.println("Given browser type does not exist");

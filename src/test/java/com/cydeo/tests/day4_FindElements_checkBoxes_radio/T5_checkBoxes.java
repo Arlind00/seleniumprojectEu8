@@ -24,40 +24,17 @@ public class T5_checkBoxes {
         WebElement checkbox1 = driver.findElement(By.xpath("//input[@name='checkbox1']"));
         WebElement checkbox2 = driver.findElement(By.xpath("//input[@name='checkbox2']"));
 
-
         System.out.println("checkbox1.isSelected(), expecting false = " + checkbox1.isSelected());  // box1 not selected
         System.out.println("checkbox2.isSelected(), expecting true = " + checkbox2.isSelected());   // box2 is selected
 
-
-        //Thread.sleep(2000);   // not needed, we put in order to see it in action
         checkbox1.click();
-
-
-        //Thread.sleep(2000);   // not needed, we put in order to see it in action
         checkbox2.click();
-
 
         System.out.println("checkbox1.isSelected(), expecting true = " + checkbox1.isSelected());
         System.out.println("checkbox2.isSelected(), expecting false = " + checkbox2.isSelected());
 
 
         driver.quit();
-
-
-//        if(checkbox1.isSelected()){
-//            System.out.println("verification passed");
-//        }else{
-//            System.out.println("verification fail");
-//        }
-//        //   7. Confirm checkbox #2 is NOT selected.
-//
-//        if(!checkbox2.isSelected()){
-//            System.out.println("verification passed");
-//        }else{
-//            System.out.println("verification fail");
-//        }
-
-        //BREAK UNTIL 3.10CST
 
     }
 }

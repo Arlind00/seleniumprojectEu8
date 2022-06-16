@@ -36,7 +36,7 @@ public class T3_getAttribute_cssSelector {
             System.out.println("Log In button text verification failed!");
 
         }
-
+//*[@id="registrationForm"]/div[10]/div/select/option[6]
 
     }
 }

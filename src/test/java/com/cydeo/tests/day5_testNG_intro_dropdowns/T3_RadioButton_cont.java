@@ -18,9 +18,7 @@ public class T3_RadioButton_cont {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
         driver.get("https://practice.cydeo.com/radio_buttons");
-
 
         clickAndVerifyRadioButton(driver, "sport", "water_PoLo" );          // giving attributes to method
     }

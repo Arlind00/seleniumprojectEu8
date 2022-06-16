@@ -1,25 +1,30 @@
 package com.cydeo.tests.day10_upload_actions_jsexecutor;
 
+import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class T7_JavascriptExecutor_2 {
 
 
-
     @Test
-    public void js_test(){
+    public void js_test() {
 
         Driver.getDriver().get("https://practice.cydeo.com/large");
 
+        WebElement poweredByCydeo = Driver.getDriver().findElement(By.xpath("//div[@style=\"text-align: center;\"]"));
+        WebElement homeButton = Driver.getDriver().findElement(By.xpath("//a[.=\"Home\"]"));
 
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
+        js.executeScript("arguments[0].scrollIntoView(true)",poweredByCydeo);       // we pass the xpath as argument
+        BrowserUtils.sleep(5);
 
-
-
-
+        js.executeScript("arguments[0].scrollIntoView(true)",homeButton);
     }
-
 }
 
 
