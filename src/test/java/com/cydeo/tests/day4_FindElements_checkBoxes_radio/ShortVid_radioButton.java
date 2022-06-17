@@ -15,8 +15,9 @@ public class ShortVid_radioButton {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-
         driver.get("https://practice.cydeo.com/radio_buttons");
+
+
 
         WebElement blueRadio = driver.findElement(By.id("blue"));
         System.out.println("before isSelected() = " + blueRadio.isSelected());

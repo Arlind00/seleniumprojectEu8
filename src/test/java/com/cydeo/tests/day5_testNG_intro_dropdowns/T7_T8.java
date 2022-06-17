@@ -62,7 +62,6 @@ public class T7_T8 {
             String element = each.getText();
             System.out.println(element);
         }
-
     }
 
 

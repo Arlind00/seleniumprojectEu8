@@ -34,6 +34,7 @@ public class T5_Windows_Practice {
 
         String mainHandle = driver.getWindowHandle();                   // useful to store main-handle
         System.out.println("mainHandle = " + mainHandle);
+        System.out.println();
 
 
         String expectedTitle = "Windows";                               // handle qe e deshirojme te kemi

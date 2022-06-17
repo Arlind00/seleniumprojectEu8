@@ -29,7 +29,6 @@ public class T4_findElements {
             System.out.println("Text of link: " + each.getText());
             System.out.println("HREF Values: " + each.getAttribute("href"));
         }
-
     }
 }
 

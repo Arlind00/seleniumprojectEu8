@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
@@ -29,7 +28,7 @@ public class T1_Alert_Practices {
     }
 
 
-    @Ignore
+
     @Test(priority = 1)
     public void alert_test1() throws InterruptedException {
 
@@ -54,7 +53,7 @@ public class T1_Alert_Practices {
     }
 
 
-    @Ignore
+
     @Test(priority = 2)
     public void alert_test2() throws InterruptedException {
 

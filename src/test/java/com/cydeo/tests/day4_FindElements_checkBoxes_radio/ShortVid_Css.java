@@ -17,6 +17,7 @@ public class ShortVid_Css {
 
         driver.get("https://search.yahoo.com/");
 
+
         WebElement searchBox = driver.findElement(By.cssSelector("#yschsp"));           // shortcut for id
         searchBox.sendKeys("it lives");
         Thread.sleep(2000);
