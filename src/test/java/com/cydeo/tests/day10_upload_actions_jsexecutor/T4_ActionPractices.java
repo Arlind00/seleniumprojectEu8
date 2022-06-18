@@ -1,6 +1,5 @@
 package com.cydeo.tests.day10_upload_actions_jsexecutor;
 
-import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -18,6 +17,8 @@ public class T4_ActionPractices {
         WebElement poweredByCydeo = Driver.getDriver().findElement(By.xpath("//a[text()=\"CYDEO\"]"));      // locating element in order to be able to pass as argument in actions
         Actions actions = new Actions(Driver.getDriver());          // we pass driver instance
         actions.moveToElement(poweredByCydeo).pause(3000).perform();
+
+        Driver.closeDriver();               // it will terminate the driver and assign a null value to it, when a driver instance is called will execute in new driver
     }
 
 
@@ -25,10 +26,12 @@ public class T4_ActionPractices {
     public void scroll_Test2(){
 
         WebElement homeButton =Driver.getDriver().findElement(By.xpath("//a[@class=\"nav-link\"]"));
-
-        BrowserUtils.sleep(5);
         Actions actions2 = new Actions(Driver.getDriver());
-        actions2.moveToElement(homeButton).perform();
+        actions2.moveToElement(homeButton).pause(3000).perform();           // best way
+
+        // actions2.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();         // not very secure way
+
+        Driver.closeDriver();           // it will terminate the driver and assign a null value to it
     }
 
 }
