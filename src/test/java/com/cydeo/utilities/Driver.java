@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 public class Driver {
 
 
-    public  Driver() {
+    private  Driver() {
     }                                       // creating private constructor (closing access to object from outside)
 
     private static WebDriver driver;                          // private: because we want to control access from outside the class

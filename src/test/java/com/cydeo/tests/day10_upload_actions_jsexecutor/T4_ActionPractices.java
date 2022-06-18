@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.Test;
 
-public class T4_Scroll_Practice {
+public class T4_ActionPractices {
 
 
     @Test(priority = 1)
@@ -15,11 +15,9 @@ public class T4_Scroll_Practice {
 
         Driver.getDriver().get("https://practice.cydeo.com/");
 
-        WebElement poweredByCydeo = Driver.getDriver().findElement(By.xpath("//a[text()=\"CYDEO\"]"));
-
-        Actions actions = new Actions(Driver.getDriver());
-        BrowserUtils.sleep(5);
-        actions.moveToElement(poweredByCydeo).perform();
+        WebElement poweredByCydeo = Driver.getDriver().findElement(By.xpath("//a[text()=\"CYDEO\"]"));      // locating element in order to be able to pass as argument in actions
+        Actions actions = new Actions(Driver.getDriver());          // we pass driver instance
+        actions.moveToElement(poweredByCydeo).pause(3000).perform();
     }
 
 
@@ -32,12 +30,6 @@ public class T4_Scroll_Practice {
         Actions actions2 = new Actions(Driver.getDriver());
         actions2.moveToElement(homeButton).perform();
     }
-
-
-
-
-
-
 
 }
 

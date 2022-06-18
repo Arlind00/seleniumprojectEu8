@@ -15,7 +15,7 @@ public class T3_Actions_Hover {
     public void hovering_test() {
 
 
-        Driver.getDriver().get("https://practice.cydeo.com/hovers");        // open browser, go to web page
+        Driver.getDriver().get("https://practice.cydeo.com/hovers");                // open browser, go to web page
 
         WebElement image1 = Driver.getDriver().findElement(By.xpath("(//img)[1]"));
         WebElement image2 = Driver.getDriver().findElement(By.xpath("(//img)[2]"));

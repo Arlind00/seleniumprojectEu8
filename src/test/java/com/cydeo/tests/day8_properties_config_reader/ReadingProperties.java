@@ -18,7 +18,7 @@ public class ReadingProperties {
 
             FileInputStream file = new FileInputStream("configuration.properties");     //2- We need to open the file in java memory: FileInputStream
 
-            properties.load(file);      //3- Load the properties object using FileInputStream object
+            properties.load(file);      //3- Load the file  using properties object
 
             //4- Use "properties" object to read value
 

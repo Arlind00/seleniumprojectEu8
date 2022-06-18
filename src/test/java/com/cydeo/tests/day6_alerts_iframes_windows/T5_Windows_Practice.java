@@ -31,16 +31,13 @@ public class T5_Windows_Practice {
     @Test
     public void multiple_window_test() {
 
-
         String mainHandle = driver.getWindowHandle();                   // useful to store main-handle
         System.out.println("mainHandle = " + mainHandle);
         System.out.println();
 
-
         String expectedTitle = "Windows";                               // handle qe e deshirojme te kemi
         String actualTitle = driver.getTitle();                         // handle aktual
         Assert.assertEquals(actualTitle, expectedTitle);                // krahasojme kto 2 handle
-
 
         WebElement clickHereLink = driver.findElement(By.linkText("Click Here"));
         clickHereLink.click();                                                      // new tab is opened
@@ -59,7 +56,6 @@ public class T5_Windows_Practice {
         actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitleAfterClick);
-
         System.out.println("Title after click: " + actualTitle);
         
         //driver.switchTo().window(mainHandle);         // to go back to main page

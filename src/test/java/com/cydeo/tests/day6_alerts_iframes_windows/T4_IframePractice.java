@@ -32,11 +32,10 @@ public class T4_IframePractice {
     public void iframe_test(){
 
 
-        //option #1- switching to iframe using id attribute value
 
-        // driver.switchTo().frame("mce_0_ifr");     // 1st way of switching
-        // driver.switchTo().frame(0);               // 2nd way of switching (if only one iframe then it has 0 index)
 
+        // driver.switchTo().frame("mce_0_ifr");                                                   // 1st way of switching
+        // driver.switchTo().frame(0);                                                             // 2nd way of switching (if only one iframe then it has 0 index)
         driver.switchTo().frame(driver.findElement(By.xpath("//iframe[@id='mce_0_ifr']")));        // 3rd way of switching driver to frame
 
         WebElement yourContentGoesHereText = driver.findElement(By.xpath("//p"));                  // locate element within iframe
