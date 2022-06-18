@@ -18,9 +18,9 @@ public class T7_JavascriptExecutor_2 {
         WebElement poweredByCydeo = Driver.getDriver().findElement(By.xpath("//div[@style=\"text-align: center;\"]"));
         WebElement homeButton = Driver.getDriver().findElement(By.xpath("//a[.=\"Home\"]"));
 
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();                // downcast driver to JavascriptExecutor
 
-        js.executeScript("arguments[0].scrollIntoView(true)",poweredByCydeo);       // we pass the xpath as argument
+        js.executeScript("arguments[0].scrollIntoView(true)",poweredByCydeo);        // we pass the xpath as argument[0]
         BrowserUtils.sleep(5);
 
         js.executeScript("arguments[0].scrollIntoView(true)",homeButton);

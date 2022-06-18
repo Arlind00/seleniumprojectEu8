@@ -31,7 +31,7 @@ public class T4_ActionPractices {
 
         // actions2.sendKeys(Keys.PAGE_UP, Keys.PAGE_UP).perform();         // not very secure way
 
-        Driver.closeDriver();           // it will terminate the driver and assign a null value to it
+        Driver.closeDriver();           // it will terminate the driver and assign a null value to it (one test is independent of other tests)
     }
 
 }
