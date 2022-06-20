@@ -5,22 +5,32 @@ import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import com.github.javafaker.Faker;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class POM_Practices {
 
 
+    Library_LoginPage library_loginPage;
+    Faker faker;
+
+
+    @BeforeMethod
+    public void setupMethod(){
+        Driver.getDriver().get("https://library1.cydeo.com");
+        library_loginPage = new Library_LoginPage();
+        faker = new Faker();
+    }
+
+
+
     @Test(priority = 1)
     public void required_field_error_message_test() {
-
-        Driver.getDriver().get("https://library1.cydeo.com");
-
-        Library_LoginPage library_loginPage = new Library_LoginPage();          // we create our new object
 
         library_loginPage.signInButton.click();
 
         Assert.assertTrue(library_loginPage.errorMessage.isDisplayed());
-
+        BrowserUtils.sleep(3);
         Driver.closeDriver();
 
 /*
@@ -36,20 +46,15 @@ NOTE: FOLLOW POM DESIGN PATTERN
     }
 
 
+
     @Test(priority = 2)
     public void invalid_email_format_test() {
 
-        Driver.getDriver().get("https://library1.cydeo.com");
-        Faker faker = new Faker();
-
-        //String username = faker.bothify("?????###?????.com");
-
-        Library_LoginPage library_loginPage2 = new Library_LoginPage();
-        library_loginPage2.inputUsername.sendKeys(faker.bothify("???###.cOm"));
+        library_loginPage.inputUsername.sendKeys(faker.bothify("???###.cOm"));
         BrowserUtils.sleep(3);
-        library_loginPage2.signInButton.click();
+        library_loginPage.signInButton.click();
 
-        Assert.assertTrue(library_loginPage2.errormessageEmail.isDisplayed());
+        Assert.assertTrue(library_loginPage.errormessageEmail.isDisplayed());
         BrowserUtils.sleep(3);
         Driver.closeDriver();
 
@@ -65,21 +70,18 @@ TC #2: Invalid email format error message test
     }
 
 
+
     @Test(priority = 3)
     public void incorrectUsernameOrPassword_test() {
 
-        Driver.getDriver().get("https://library1.cydeo.com");
-        Faker faker = new Faker();
-
-        Library_LoginPage library_loginPage3 = new Library_LoginPage();
-        library_loginPage3.inputUsername.sendKeys(faker.bothify("###???@###???.com"));
+        library_loginPage.inputUsername.sendKeys(faker.bothify("###???@###???.com"));
         BrowserUtils.sleep(3);
 
-        library_loginPage3.inputPassword.sendKeys(faker.bothify("?#"));
+        library_loginPage.inputPassword.sendKeys(faker.bothify("?#"));
         BrowserUtils.sleep(3);
-        library_loginPage3.signInButton.click();
+        library_loginPage.signInButton.click();
 
-        Assert.assertTrue(library_loginPage3.wrongEmailOrPassword.isDisplayed());
+        Assert.assertTrue(library_loginPage.wrongEmailOrPassword.isDisplayed());
         BrowserUtils.sleep(3);
         Driver.closeDriver();
 
