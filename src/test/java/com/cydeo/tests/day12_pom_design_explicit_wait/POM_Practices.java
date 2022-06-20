@@ -80,6 +80,7 @@ TC #2: Invalid email format error message test
         library_loginPage3.signInButton.click();
 
         Assert.assertTrue(library_loginPage3.wrongEmailOrPassword.isDisplayed());
+        BrowserUtils.sleep(3);
         Driver.closeDriver();
 
    /*

@@ -34,8 +34,6 @@ public class Library_LoginPage {
 
     @FindBy(xpath = "//div[.=\"Sorry, Wrong Email or Password\"]")
     public WebElement wrongEmailOrPassword;
-
-
 }
 
 
